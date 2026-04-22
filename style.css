@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.span600 {
+  font-weight: 600;
+}
+
+.center {
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+.header {
+  background-color: #E1FF8F;
+  position: relative;
+  z-index: 0;
+}
+.header__title {
+  font-size: 64px;
+  font-weight: 700;
+  padding-top: 196px;
+  padding-left: 120px;
+}
+.header__subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  padding-top: 24px;
+  padding-left: 120px;
+}
+.header__button {
+  display: inline-block;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 16px 65px;
+  border: #000000 solid 1px;
+  border-radius: 60px;
+  margin-top: 48px;
+  margin-left: 120px;
+  margin-bottom: 156px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.header__button:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  cursor: pointer;
+  border: 1px solid #000000;
+}
+.header__ticker {
+  background-color: #BCEC30;
+  width: 100%;
+  display: flex;
+  gap: 51px;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+.header__ticker-track {
+  font-weight: 700;
+  font-size: 30px;
+  white-space: nowrap;
+  align-items: center;
+  padding-top: 27px;
+  padding-bottom: 27px;
+}
+.header__ticker-track::after {
+  content: "";
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background: url(images/Star.svg) no-repeat;
+  margin-left: 51px;
+  vertical-align: middle;
+}
+.header__vector-0 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.header__vector-4 {
+  position: absolute;
+  top: 568px;
+  right: 344px;
+}
+.header__vector-5 {
+  position: absolute;
+  top: 538px;
+  right: 455px;
+}
+.header__vector-2 {
+  position: absolute;
+  top: 94px;
+  left: 63px;
+}
+.header__vector-3 {
+  position: absolute;
+  top: 69px;
+  left: 156px;
+}
+
+.about-games {
+  background-color: #202027;
+  padding-bottom: 96px;
+  padding-top: 94px;
+  position: relative;
+  z-index: 1;
+}
+.about-games__title {
+  color: #FFFFFF;
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 72px;
+}
+.about-games__description {
+  font-size: 24px;
+  font-weight: 400;
+  color: #FFFFFF;
+  margin-bottom: 72px;
+}
+.about-games__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(378px, 1fr));
+  -moz-column-gap: 32px;
+       column-gap: 32px;
+  align-items: start;
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+}
+.about-games__item {
+  max-width: 378px;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-games__item:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.about-games__item:nth-child(5) {
+  margin-top: 32px;
+}
+.about-games__name {
+  color: #202027;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 36px;
+  order: 2;
+  margin-left: 32px;
+}
+.about-games__number {
+  color: #202027;
+  display: inline-block;
+  max-width: 111px;
+  background-color: #F7F7F7;
+  border-radius: 52px;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 16px;
+  margin-top: 16pxpx;
+  margin-left: 32px;
+  margin-right: 32px;
+  order: 1;
+}
+.about-games__vector-1 {
+  position: absolute;
+  top: 77px;
+  right: 0;
+  z-index: 1;
+}
+.about-games__vector-12 {
+  position: absolute;
+  top: 822px;
+  left: 40px;
+  z-index: 1;
+}
+.about-games__vector-11 {
+  position: absolute;
+  top: 770px;
+  left: 25px;
+  z-index: 1;
+}/*# sourceMappingURL=style.css.map */
