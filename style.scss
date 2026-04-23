@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 }
@@ -13,8 +17,7 @@ body {
 }
 
 .center {
-    padding-left: 120px;
-    padding-right: 120px;
+    margin: 0 auto;
 }
 
 .header {
@@ -127,6 +130,11 @@ body {
     position: relative;
     z-index: 1;
 
+    &__intro {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
     &__title {
         color: #FFFFFF;
         font-size: 64px;
@@ -149,6 +157,7 @@ body {
         position: relative;
         z-index: 2;
         max-width: 1200px;
+        margin: 0 auto;
     }
 
     &__item {

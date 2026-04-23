@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -13,8 +17,7 @@ body {
 }
 
 .center {
-  padding-left: 120px;
-  padding-right: 120px;
+  margin: 0 auto;
 }
 
 .header {
@@ -119,6 +122,10 @@ body {
   position: relative;
   z-index: 1;
 }
+.about-games__intro {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .about-games__title {
   color: #FFFFFF;
   font-size: 64px;
@@ -140,6 +147,7 @@ body {
   position: relative;
   z-index: 2;
   max-width: 1200px;
+  margin: 0 auto;
 }
 .about-games__item {
   max-width: 378px;
