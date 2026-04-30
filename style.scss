@@ -31,14 +31,12 @@ body {
         font-size: 64px;
         font-weight: 700;
         padding-top: 196px;
-        padding-left: 120px;
     }
 
     &__subtitle {
         font-size: 24px;
         font-weight: 400;
         padding-top: 24px;
-        padding-left: 120px;
     }
 
     &__button {
@@ -51,7 +49,6 @@ body {
         border: #000000 solid 1px;
         border-radius: 60px;
         margin-top: 48px;
-        margin-left: 120px;
         margin-bottom: 156px;
         text-decoration: none;
         transition: all 0.3s ease;
@@ -126,6 +123,11 @@ body {
         top: 69px;
         left: 156px;
     }
+
+    &__vector-mob {
+        display: none;
+    }
+
 }
 
 .about-games {
@@ -204,7 +206,7 @@ body {
         font-size: 15px;
         font-weight: 500;
         padding: 8px 16px;
-        margin-top: 16pxpx;
+        margin-top: 16px;
         margin-left: 32px;
         margin-right: 32px;
         order: 1;
@@ -230,4 +232,95 @@ body {
     }
 
 }
+
+.mini-games {
+    background-color: #202027;
+    padding-bottom: 144px;
+
+    &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    }
+
+    &__title {
+        color: #FFFFFF;
+        font-size: 64px;
+        font-weight: 700;
+        padding-bottom: 72px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: row;
+        background-color: #FFFFFF;
+        border-radius: 30px;
+    }
+
+    &__item:nth-child(2n) {
+        flex-direction: row-reverse;
+    }
+
+    &__info-block {
+        margin: 0 auto;
+        width: 504px;
+    }
+
+    &__img {
+        width: 600px;
+    }
+
+    &__name {
+        font-size: 48px;
+        font-weight: 700;
+        color: #202027;
+        padding-top: 48px;
+    }
+
+    &__description {
+        font-size: 24px;
+        font-weight: 400;
+        color: #202027;
+        padding-top: 24px;
+        padding-bottom: 36px;
+    }
+
+    &__link {
+        display: inline-block;
+        background-color: #000000;
+        color: #FFFFFF;
+        font-size: 24px;
+        font-weight: 600;
+        padding: 16px 65px;
+        border: #000000 solid 1px;
+        border-radius: 60px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    &__link:hover {
+        background-color: #FFFFFF;
+        color: #000000;
+        cursor: pointer;
+        border: 1px solid #000000;
+    }
+
+}
+
+.footer {
+    background-color: #BDED35;
+    
+    &__copyright {
+        font-size: 24px;
+        font-weight: 600;
+        color: #000000;
+        padding: 60px 0;
+        text-align: center;
+    }
+}
+    
+
+
+
+@import 'mobile'
 
