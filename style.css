@@ -162,6 +162,7 @@ body {
   background-color: #FFFFFF;
   border-radius: 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
 }
 .about-games__item:hover {
   cursor: pointer;
@@ -354,8 +355,17 @@ body {
   }
   .header__ticker-track {
     font-size: 16px;
-    padding-top: 17px;
-    padding-bottom: 17px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .header__ticker-track::after {
+    content: "";
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    background: url(images/star-mb.svg) no-repeat;
+    margin-left: 27px;
+    vertical-align: middle;
   }
   .about-games {
     display: none;
