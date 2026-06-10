@@ -108,109 +108,25 @@ function reverseText() {
     alert(`Перевернутый текст: ${reversedText}`);
 }
 
-// Задание 1
+function playRockPaperScissors() {
 
-console.log("js".toUpperCase());
+    let userChoice = prompt("Выберите: камень, ножницы или бумага").toLowerCase();
 
+    const choices = ["камень", "ножницы", "бумага"];
 
-// Задание 2
+    let computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
-function filterStrings(array, startString) {
-    return array.filter((item) =>
-        item.toLowerCase().startsWith(startString.toLowerCase())
-    );
-}
+    alert(`Компьютер выбрал: ${computerChoice}`);
 
-console.log(filterStrings(["JavaScript", "Java", "Python", "PHP"], "ja"));
-
-
-// Задание 3
-
-const number = 32.58884;
-
-console.log(Math.floor(number));
-console.log(Math.ceil(number));
-console.log(Math.round(number));
-
-
-// Задание 4
-
-console.log(Math.min(52, 53, 49, 77, 21, 32));
-console.log(Math.max(52, 53, 49, 77, 21, 32));
-
-
-// Задание 5
-
-function showRandomNumber() {
-    console.log(Math.floor(Math.random() * 10) + 1);
-}
-
-showRandomNumber();
-
-
-// Задание 6
-
-function getRandomArray(num) {
-    const result = [];
-
-    for (let i = 0; i < Math.floor(num / 2); i++) {
-        result.push(Math.floor(Math.random() * (num + 1)));
+    if (userChoice === computerChoice) {
+        alert("Ничья!");
+    } else if (
+        (userChoice === "камень" && computerChoice === "ножницы") ||
+        (userChoice === "ножницы" && computerChoice === "бумага") ||
+        (userChoice === "бумага" && computerChoice === "камень")
+    ) {
+        alert("Вы выиграли! 🎉");
+    } else {
+        alert("Вы проиграли. Попробуйте снова!");
     }
-
-    return result;
 }
-
-console.log(getRandomArray(10));
-
-
-// Задание 7
-
-function getRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-console.log(getRandomNumber(3, 8));
-
-
-// Задание 8
-
-console.log(new Date());
-
-
-// Задание 9
-
-const currentDate = new Date();
-const futureDate = new Date(currentDate);
-
-futureDate.setDate(currentDate.getDate() + 73);
-
-console.log(futureDate);
-
-
-// Задание 10
-
-function formatDate(date) {
-    const months = [
-        "января", "февраля", "марта", "апреля", "мая", "июня",
-        "июля", "августа", "сентября", "октября", "ноября", "декабря"
-    ];
-
-    const days = [
-        "воскресенье", "понедельник", "вторник", "среда",
-        "четверг", "пятница", "суббота"
-    ];
-
-    const day = date.getDate();
-    const month = months[date.getMonth()];
-    const year = date.getFullYear();
-    const weekDay = days[date.getDay()];
-
-    const hours = date.getHours();
-    const minutes = date.getMinutes();
-    const seconds = date.getSeconds();
-
-    return `Дата: ${day} ${month} ${year} — это ${weekDay}.
-Время: ${hours}:${minutes}:${seconds}`;
-}
-
-console.log(formatDate(new Date()));
