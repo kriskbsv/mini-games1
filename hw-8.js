@@ -114,6 +114,11 @@ function playRockPaperScissors() {
 
     const choices = ["камень", "ножницы", "бумага"];
 
+    if (!choices.includes(userChoice)) {
+    alert("Некорректный ввод! Нужно ввести: камень, ножницы или бумага");
+    return;
+   }
+
     let computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
     alert(`Компьютер выбрал: ${computerChoice}`);
