@@ -108,109 +108,119 @@ function reverseText() {
     alert(`Перевернутый текст: ${reversedText}`);
 }
 
+function playRockPaperScissors() {
+
+    let userChoice = prompt("Выберите: камень, ножницы или бумага").toLowerCase();
+
+    const choices = ["камень", "ножницы", "бумага"];
+
+    if (!choices.includes(userChoice)) {
+    alert("Некорректный ввод! Нужно ввести: камень, ножницы или бумага");
+    return;
+   }
+
+    let computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+    alert(`Компьютер выбрал: ${computerChoice}`);
+
+    if (userChoice === computerChoice) {
+        alert("Ничья!");
+    } else if (
+        (userChoice === "камень" && computerChoice === "ножницы") ||
+        (userChoice === "ножницы" && computerChoice === "бумага") ||
+        (userChoice === "бумага" && computerChoice === "камень")
+    ) {
+        alert("Вы выиграли! 🎉");
+    } else {
+        alert("Вы проиграли. Попробуйте снова!");
+    }
+}
+
 // Задание 1
 
-console.log("js".toUpperCase());
+const peopleForSort = [
+    { name: "Глеб", age: 29 },
+    { name: "Анна", age: 17 },
+    { name: "Олег", age: 7 },
+    { name: "Оксана", age: 47 }
+];
+
+console.log(peopleForSort.sort((a, b) => a.age - b.age));
 
 
 // Задание 2
 
-function filterStrings(array, startString) {
-    return array.filter((item) =>
-        item.toLowerCase().startsWith(startString.toLowerCase())
-    );
+function isPositive(number) {
+    return number > 0;
 }
 
-console.log(filterStrings(["JavaScript", "Java", "Python", "PHP"], "ja"));
-
-
-// Задание 3
-
-const number = 32.58884;
-
-console.log(Math.floor(number));
-console.log(Math.ceil(number));
-console.log(Math.round(number));
-
-
-// Задание 4
-
-console.log(Math.min(52, 53, 49, 77, 21, 32));
-console.log(Math.max(52, 53, 49, 77, 21, 32));
-
-
-// Задание 5
-
-function showRandomNumber() {
-    console.log(Math.floor(Math.random() * 10) + 1);
+function isMale(person) {
+    return person.gender === "male";
 }
 
-showRandomNumber();
-
-
-// Задание 6
-
-function getRandomArray(num) {
+function filter(array, ruleFunction) {
     const result = [];
 
-    for (let i = 0; i < Math.floor(num / 2); i++) {
-        result.push(Math.floor(Math.random() * (num + 1)));
+    for (let i = 0; i < array.length; i++) {
+        if (ruleFunction(array[i])) {
+            result.push(array[i]);
+        }
     }
 
     return result;
 }
 
-console.log(getRandomArray(10));
+console.log(filter([3, -4, 1, 9], isPositive));
+
+const people = [
+    { name: "Глеб", gender: "male" },
+    { name: "Анна", gender: "female" },
+    { name: "Олег", gender: "male" },
+    { name: "Оксана", gender: "female" }
+];
+
+console.log(filter(people, isMale));
 
 
-// Задание 7
+// Задание 3
 
-function getRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+const intervalId = setInterval(() => {
+    console.log(new Date());
+}, 3000);
+
+setTimeout(() => {
+    clearInterval(intervalId);
+    console.log("30 секунд прошло");
+}, 30000);
+
+
+// Задание 4
+
+function delayForSecond(callback) {
+    setTimeout(callback, 1000);
 }
 
-console.log(getRandomNumber(3, 8));
+delayForSecond(function () {
+    console.log("Привет, Глеб!");
+});
 
 
-// Задание 8
+// Задание 5
 
-console.log(new Date());
+function delayForSecondTask5(cb) {
+    setTimeout(() => {
+        console.log("Прошла одна секунда");
 
-
-// Задание 9
-
-const currentDate = new Date();
-const futureDate = new Date(currentDate);
-
-futureDate.setDate(currentDate.getDate() + 73);
-
-console.log(futureDate);
-
-
-// Задание 10
-
-function formatDate(date) {
-    const months = [
-        "января", "февраля", "марта", "апреля", "мая", "июня",
-        "июля", "августа", "сентября", "октября", "ноября", "декабря"
-    ];
-
-    const days = [
-        "воскресенье", "понедельник", "вторник", "среда",
-        "четверг", "пятница", "суббота"
-    ];
-
-    const day = date.getDate();
-    const month = months[date.getMonth()];
-    const year = date.getFullYear();
-    const weekDay = days[date.getDay()];
-
-    const hours = date.getHours();
-    const minutes = date.getMinutes();
-    const seconds = date.getSeconds();
-
-    return `Дата: ${day} ${month} ${year} — это ${weekDay}.
-Время: ${hours}:${minutes}:${seconds}`;
+        if (cb) {
+            cb();
+        }
+    }, 1000);
 }
 
-console.log(formatDate(new Date()));
+function sayHi(name) {
+    console.log(`Привет, ${name}!`);
+}
+
+delayForSecondTask5(() => {
+    sayHi("Глеб");
+});
