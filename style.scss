@@ -64,13 +64,7 @@ body {
     &__ticker {
         background-color: #BCEC30;
         width: 100%;
-        display: flex;
-        gap: 51px;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: nowrap;
         overflow: hidden;
-        align-items: center;
         z-index: 2;
         position: absolute;
         bottom: 0;
@@ -78,13 +72,26 @@ body {
         left: 0;
     }
 
+    &__ticker:hover .header__ticker-line {
+        animation-play-state: paused;
+    }
+
+    &__ticker-line {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: max-content;
+        animation: header-ticker 20s linear infinite;
+    }
+
     &__ticker-track {
         font-weight: 700;
         font-size: 30px;
         white-space: nowrap;
-        align-items: center;
         padding-top: 27px;
         padding-bottom: 27px;
+        margin-right: 51px;
     }
 
     &__ticker-track::after {
@@ -130,6 +137,15 @@ body {
 
 }
 
+@keyframes header-ticker {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 .about-games {
     background-color: #202027;
     padding-bottom: 96px;
@@ -165,6 +181,11 @@ body {
         z-index: 2;
         max-width: 1200px;
         margin: 0 auto;
+        list-style: none;
+    }
+
+    &__cell:nth-child(5) {
+        margin-top: 32px;
     }
 
     &__item {
@@ -183,10 +204,6 @@ body {
         transform: scale(1.05);
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 
-    }
-
-    &__item:nth-child(5) {
-        margin-top: 32px;
     }
 
     &__name {
@@ -242,6 +259,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 32px;
+    list-style: none;
     }
 
     &__title {
@@ -258,7 +276,7 @@ body {
         border-radius: 30px;
     }
 
-    &__item:nth-child(2n) {
+    &__cell:nth-child(2n) .mini-games__item {
         flex-direction: row-reverse;
     }
 
@@ -290,12 +308,14 @@ body {
         display: inline-block;
         background-color: #000000;
         color: #FFFFFF;
+        font-family: inherit;
         font-size: 24px;
         font-weight: 600;
         padding: 16px 65px;
         border: #000000 solid 1px;
         border-radius: 60px;
         text-decoration: none;
+        cursor: pointer;
         transition: all 0.3s ease;
     }
 
@@ -322,6 +342,12 @@ body {
     
 
 
+
+@media (prefers-reduced-motion: reduce) {
+    .header__ticker-line {
+        animation: none;
+    }
+}
 
 @import 'mobile'
 
